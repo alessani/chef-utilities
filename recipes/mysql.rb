@@ -1,9 +1,7 @@
 gem_package "mysql" # recipe mysql use mysql, not mysql2 gem
 
-YAML::ENGINE.yamler = 'syck'
-
 secrets = Chef::EncryptedDataBagItem.load("dbusers", "root")
-Chef::Log.info("The mysql password is: '"+ secrets['password_root'] + "'")
+
 mysql_connection_info = {:host => node['mysql']['hostname'], :username => 'root', :password => secrets['password_root']}
 
 node['dbusers'].each do |username|
