@@ -1,4 +1,9 @@
 gem_package "pg"
+r = package "ruby-pg" do
+  package_name "libpgsql-ruby"
+  action :nothing
+end
+r.run_action(:upgrade)
 
 postgresql_connection_info = {:host => "127.0.0.1", :port => 5432, :username => 'postgres', :password => Chef::EncryptedDataBagItem.load("dbusers", "postgres")['password_root']}
 
