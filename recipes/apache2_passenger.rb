@@ -5,5 +5,5 @@ rbenv_gem "passenger" do
 end
 
 execute "install passenger for apache2" do
-  command "passenger-install-apache2-module"
+  command "rbenv rehash; passenger-install-apache2-module"
 end
