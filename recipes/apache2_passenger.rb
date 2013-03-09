@@ -5,5 +5,5 @@ rbenv_gem "passenger" do
 end
 
 execute "install passenger 4.0.rc4 for apache2" do
-  command "/opt/rbenv/versions/#{node[:rubymachine][:default]}/bin/passenger-install-apache2-module"
+  command "/opt/rbenv/versions/#{node[:rubymachine][:default]}/bin/passenger-install-apache2-module --auto"
 end
