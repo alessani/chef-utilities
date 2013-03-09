@@ -4,6 +4,7 @@ rbenv_gem "passenger" do
   version "4.0.0.rc4"
 end
 
-execute "install passenger for apache2" do
-  command "rbenv rehash; passenger-install-apache2-module"
+rbenv_script "install passenger for apache2" do
+  rbenv_version "#{node[:rubymachine][:patched_rubies].first}-perf"
+  code "passenger-install-apache2-module"
 end
