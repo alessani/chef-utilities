@@ -26,6 +26,10 @@ template "/etc/apache2/mods-available/passenger.load" do
   )
 end
 
-link "/etc/apache2/mods-available/passenger.load" do
-  to "/etc/apache2/mods-enabled/passenger.load"
+link "/etc/apache2/mods-enabled/passenger.load" do
+  to "/etc/apache2/mods-available/passenger.load"
+end
+
+service "apache2" do
+  action :restart
 end
