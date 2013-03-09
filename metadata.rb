@@ -2,7 +2,7 @@ maintainer        "Matteo Alessani"
 maintainer_email  "alessani@gmail.com"
 license           "Apache 2.0"
 description       "Installs and configures the server, with logrotate and upstart"
-version           "1.0.2"
+version           "1.0.3"
 
 recipe            "main", "Setup all settings for sytems included ebs"
 recipe            "main::user", "Setup user for system"
