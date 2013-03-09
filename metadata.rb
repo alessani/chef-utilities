@@ -14,6 +14,7 @@ recipe            "main::apt_postgresql_ppa", "set repository for postgresql 9"
 recipe            "main::jetty", "logrotate for jetty"
 recipe            "main::unicorn", "logorotate apps"
 recipe            "main::nginx", "upstart configuration"
+recipe            "main::apache2_passenger", "apache2 passenger configuration"
 
 depends 'database'
 depends 'logrotate'
