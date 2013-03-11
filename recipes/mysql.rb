@@ -4,7 +4,7 @@ secrets = Chef::EncryptedDataBagItem.load("dbusers", "root")
 
 mysql_connection_info = {:host => node['mysql']['hostname'], :username => 'root', :password => secrets['password_root']}
 
-node['dbusers'].each do |username|
+node['db']['users'].each do |username|
   user = Chef::EncryptedDataBagItem.load('dbusers', username)
   
   if user['database']
