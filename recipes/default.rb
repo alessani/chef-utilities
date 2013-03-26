@@ -1,10 +1,3 @@
-include_recipe "apt"
-include_recipe "git"
-include_recipe "ntp"
-include_recipe "openssl"
-include_recipe "build-essential"
-
-package "htop"
 package "unzip"
 
 #directory "/home/#{node[:user][:name]}/example" do
