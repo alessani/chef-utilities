@@ -3,7 +3,7 @@ package "apache2-threaded-dev"
 package "libapr1-dev"
 
 ruby_ver = node[:rubymachine][:default]
-passenger_version = "4.0.0.rc4"
+passenger_version = "4.0.2"
 
 rbenv_gem "passenger" do
   ruby_version ruby_ver
@@ -11,7 +11,7 @@ rbenv_gem "passenger" do
   version passenger_version
 end
 
-execute "install passenger 4.0.0.rc4 for apache2" do
+execute "install passenger 4.0.2 for apache2" do
   command "/opt/rbenv/versions/#{ruby_ver}/bin/passenger-install-apache2-module --auto"
   not_if {::File.exists?("/opt/rbenv/versions/#{ruby_ver}/lib/ruby/gems/1.9.1/gems/passenger-#{passenger_version}/libout/apache2/mod_passenger.so")}
 end
