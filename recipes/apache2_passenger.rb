@@ -6,8 +6,8 @@ ruby_ver = node[:rbenv][:rubies].first
 passenger_version = "4.0.2"
 
 rbenv_gem "passenger" do
-  ruby_version ruby_ver
-  gem_binary "/opt/rbenv/versions/#{ruby_ver}/bin/gem"
+  rbenv_version ruby_ver
+  #gem_binary "/opt/rbenv/versions/#{ruby_ver}/bin/gem"
   version passenger_version
 end
 
