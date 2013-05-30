@@ -2,7 +2,7 @@ package "libcurl4-openssl-dev"
 package "apache2-threaded-dev"
 package "libapr1-dev"
 
-ruby_ver = node[:rubymachine][:default]
+ruby_ver = node[:rbenv][:rubies].first
 passenger_version = "4.0.2"
 
 rbenv_gem "passenger" do
