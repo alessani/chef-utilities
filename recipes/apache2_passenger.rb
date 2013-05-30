@@ -4,6 +4,7 @@ package "libapr1-dev"
 
 ruby_ver = node[:rbenv][:rubies].first
 passenger_version = "4.0.2"
+rbenv_path = "/usr/local/rbenv/versions"
 
 rbenv_gem "passenger" do
   rbenv_version ruby_ver
@@ -12,8 +13,8 @@ rbenv_gem "passenger" do
 end
 
 execute "install passenger 4.0.2 for apache2" do
-  command "/opt/rbenv/versions/#{ruby_ver}/bin/passenger-install-apache2-module --auto"
-  not_if {::File.exists?("/opt/rbenv/versions/#{ruby_ver}/lib/ruby/gems/1.9.1/gems/passenger-#{passenger_version}/libout/apache2/mod_passenger.so")}
+  command "#{rbenv_path}/#{ruby_ver}/bin/passenger-install-apache2-module --auto"
+  not_if {::File.exists?("#{path}/#{ruby_ver}/lib/ruby/gems/1.9.1/gems/passenger-#{passenger_version}/libout/apache2/mod_passenger.so")}
 end
 
 template "/etc/apache2/mods-available/passenger.load" do
