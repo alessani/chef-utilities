@@ -24,7 +24,8 @@ template "/etc/apache2/mods-available/passenger.load" do
   group "root"
   variables(
     :ruby_version => ruby_ver,
-    :passenger_version => passenger_version
+    :passenger_version => passenger_version,
+    :path => rbenv_path
   )
 end
 
