@@ -25,7 +25,7 @@ template "/etc/apache2/mods-available/passenger.load" do
   variables(
     :ruby_version => ruby_ver,
     :passenger_version => passenger_version,
-    :path => rbenv_path
+    :rbenv_path => rbenv_path
   )
 end
 
