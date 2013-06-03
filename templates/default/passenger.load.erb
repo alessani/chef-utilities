@@ -1,3 +1,3 @@
-LoadModule passenger_module <%= @rbenv_path %>/<%= @ruby_version %>/lib/ruby/gems/1.9.1/gems/passenger-<%= @passenger_version %>/libout/apache2/mod_passenger.so
-PassengerRoot <%= @rbenv_path %>/<%= @ruby_version %>/lib/ruby/gems/1.9.1/gems/passenger-<%= @passenger_version %>
+LoadModule passenger_module <%= @rbenv_path %>/<%= @ruby_version %>/lib/ruby/gems/<%= @ruby_main_ver %>/gems/passenger-<%= @passenger_version %>/libout/apache2/mod_passenger.so
+PassengerRoot <%= @rbenv_path %>/<%= @ruby_version %>/lib/ruby/gems/<%= @ruby_main_ver %>/gems/passenger-<%= @passenger_version %>
 PassengerRuby <%= @rbenv_path %>/<%= @ruby_version %>/bin/ruby
