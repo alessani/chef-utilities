@@ -1,4 +1,5 @@
 package "unzip"
+package "htop"
 
 #directory "/home/#{node[:user][:name]}/example" do
 #  owner node[:user][:name]
