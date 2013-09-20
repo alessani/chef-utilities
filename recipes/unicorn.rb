@@ -9,6 +9,11 @@ node['apps']['running'].each do |app|
     )
   end
 
+  directory "/var/log/#{app}" do
+    user "ubuntu"
+    group "ubuntu"
+  end
+
   directory "/var/run/#{app}" do
     user "ubuntu"
     group "ubuntu"
