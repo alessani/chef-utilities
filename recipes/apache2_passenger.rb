@@ -33,7 +33,8 @@ template "/etc/apache2/mods-available/passenger.load" do
     :ruby_version => ruby_ver,
     :passenger_version => passenger_version,
     :rbenv_path => rbenv_path,
-    :ruby_main_ver => ruby_main_ver
+    :ruby_main_ver => ruby_main_ver,
+    :number_of_passenger => node[:passenger][:number_of_passenger]
   )
 end
 
