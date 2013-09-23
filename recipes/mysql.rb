@@ -2,7 +2,7 @@ gem_package "mysql" # recipe mysql use mysql, not mysql2 gem
 
 secrets = Chef::EncryptedDataBagItem.load("dbusers", "root")
 
-mysql_connection_info = {:host => node['mysql']['hostname'], :username => 'root', :password => secrets['password_root']}
+mysql_connection_info = {:host => node['mysql']['hostname'], :username => 'root', :password => node['mysql']['server_root_password']}
 
 node['db']['users'].each do |username|
   user = Chef::EncryptedDataBagItem.load('dbusers', username)
