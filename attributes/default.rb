@@ -1,3 +1,13 @@
 default["mysql"]["ebs_size"] = 50
 default["apps"]["ebs_size"] = 50
 default["passenger"]["number_of_passenger"] = 6
+default["apps"]["volume_type"] = "standard"
+default["apps"]["piops"] = 100
+default["mysql"]["volume_type"] = "standard"
+default["mysql"]["piops"] = 100
+default["beanstalkd"]["volume_type"] = "standard"
+default["beanstalkd"]["piops"] = 100
+default["redis"]["volume_type"] = "standard"
+default["redis"]["piops"] = 100
+default["mongodb"]["volume_type"] = "standard"
+default["mongodb"]["piops"] = 100

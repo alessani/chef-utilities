@@ -6,6 +6,8 @@ aws_ebs_volume "db_ebs_volume" do
   size node['mysql']['ebs_size']
   device "/dev/sdg"
   action [ :create, :attach ]
+  volume_type node['mysql']['volume_type']
+  piops node['mysql']['piops']
 end
 
 bash "format-db-ebs" do

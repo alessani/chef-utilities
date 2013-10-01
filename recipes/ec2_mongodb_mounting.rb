@@ -6,6 +6,8 @@ aws_ebs_volume "mongodb_ebs_volume" do
   size node['mongodb']['ebs_size']
   device "/dev/sdi"
   action [ :create, :attach ]
+  volume_type node['mongodb']['volume_type']
+  piops node['mongodb']['piops']
 end
 
 bash "format-data-ebs" do

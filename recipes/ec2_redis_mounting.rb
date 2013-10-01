@@ -6,6 +6,8 @@ aws_ebs_volume "redis_ebs_volume" do
   size node['redis']['ebs_size']
   device "/dev/sdh"
   action [ :create, :attach ]
+  volume_type node['redis']['volume_type']
+  piops node['redis']['piops']
 end
 
 bash "format-data-ebs" do
