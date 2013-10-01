@@ -6,8 +6,10 @@ aws_ebs_volume "app_ebs_volume" do
   size node['apps']['ebs_size']
   device "/dev/sdf"
   action [ :create, :attach ]
-  volume_type node['apps']['volume_type']
-  piops node['apps']['piops']
+  if node['apps']['volume_type'] != 'standard'
+    volume_type node['apps']['volume_type']
+    piops node['apps']['piops']
+  end
 end
 
 bash "format-data-ebs" do
