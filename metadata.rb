@@ -12,6 +12,7 @@ recipe            "main::ec2_apps_mounting", "Setup system with ebs volumes for 
 recipe            "main::ec2_mongodb_mounting", "Setup system with ebs volumes for deploy mongodb"
 recipe            "main::ec2_redis_mounting", "Setup system with ebs volumes for deploy redis"
 recipe            "main::ec2_mysql_mounting", "Setup system with ebs volumes for deploy database"
+recipe            "main::ec2_solr_mounting", "Setup system with ebs volumes for deploy solr"
 recipe            "main::apt_postgresql_ppa", "set repository for postgresql 9"
 recipe            "main::jetty", "logrotate for jetty"
 recipe            "main::unicorn", "logorotate apps"
