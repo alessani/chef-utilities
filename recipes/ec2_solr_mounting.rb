@@ -7,8 +7,8 @@ aws_ebs_volume "solr_ebs_volume" do
   device "/dev/sdj"
   action [ :create, :attach ]
   if node['solr']['volume_type'] != 'standard'
-    volume_type node['apps']['volume_type']
-    piops node['apps']['piops']
+    volume_type node['solr']['volume_type']
+    piops node['solr']['piops']
   end
 end
 
