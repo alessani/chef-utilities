@@ -2,7 +2,7 @@ maintainer        "Matteo Alessani"
 maintainer_email  "alessani@gmail.com"
 license           "Apache 2.0"
 description       "Installs and configures the server, with logrotate and upstart"
-version           "1.0.11"
+version           "1.0.12"
 
 recipe            "main", "Install common package needed to all server, like unzip and htop"
 recipe            "main::user", "Setup user for system"
@@ -18,6 +18,7 @@ recipe            "main::jetty", "logrotate for jetty"
 recipe            "main::unicorn", "logorotate apps"
 recipe            "main::nginx", "upstart configuration"
 recipe            "main::apache2_passenger", "apache2 passenger configuration"
+recipe            "main::solr_linking", "Link and directory for solr"
 
 depends 'database'
 depends 'logrotate'
