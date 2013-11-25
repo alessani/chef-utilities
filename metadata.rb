@@ -18,7 +18,6 @@ recipe            "main::jetty", "logrotate for jetty"
 recipe            "main::unicorn", "logorotate apps"
 recipe            "main::nginx", "upstart configuration"
 recipe            "main::apache2_passenger", "apache2 passenger configuration"
-recipe            "main::solr_linking", "Link and directory for solr"
 
 depends 'database'
 depends 'logrotate'
