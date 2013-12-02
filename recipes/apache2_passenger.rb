@@ -21,7 +21,7 @@ end
 
 execute "install passenger #{passenger_version} for apache2" do
   command "#{rbenv_path}/#{ruby_ver}/bin/passenger-install-apache2-module --auto"
-  not_if {::File.exists?("#{rbenv_path}/#{ruby_ver}/lib/ruby/gems/#{ruby_main_ver}/gems/passenger-#{passenger_version}/buildout/apache2/mod_passenger.so")}
+  not_if {::File.exists?("#{rbenv_path}/#{ruby_ver}/lib/ruby/gems/#{ruby_main_ver}/gems/passenger-#{passenger_version}/libout/apache2/mod_passenger.so")}
 end
 
 template "/etc/apache2/mods-available/passenger.load" do
